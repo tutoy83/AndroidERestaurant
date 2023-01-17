@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">AndroidERestaurant</string>
+    <string-array name="starter">
+        <item>Salade Manhattan</item>
+        <item>Salade provencale</item>
+        <item>Tapenade sur toasts</item>
+    </string-array>
+    <string-array name="mainmeal">
+        <item>Boeuf bourgignon</item>
+        <item>Chili con carne</item>
+        <item>Nouilles poulet</item>
+    </string-array>
+    <string-array name="desert">
+        <item>Tiramissu framboise</item>
+        <item>Ile flottante</item>
+        <item>Cocktail fruits</item>
+    </string-array>
+</resources>

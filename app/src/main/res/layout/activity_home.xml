@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/homeStarterSelection"
+        android:layout_width="170dp"
+        android:layout_height="73dp"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="220dp"
+        android:layout_marginEnd="121dp"
+        android:backgroundTint="#00FFFFFF"
+        android:text="Entrées"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#ff9800"
+        android:textFontWeight="700"
+        android:textSize="70px"
+        app:iconTint="#00FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/homeMainmealSelection"
+        android:layout_width="173dp"
+        android:layout_height="73dp"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="118dp"
+        android:backgroundTint="#00FFFFFF"
+        android:text="Plats"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#ff9800"
+        android:textFontWeight="700"
+        android:textSize="70px"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider"
+        app:strokeWidth="0px" />
+
+    <Button
+        android:id="@+id/homeDesertSelection"
+        android:layout_width="172dp"
+        android:layout_height="71dp"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="119dp"
+        android:backgroundTint="#00FFFFFF"
+        android:text="Desserts"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#ff9800"
+        android:textFontWeight="700"
+        android:textSize="70px"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider2" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="137dp"
+        android:layout_height="152dp"
+        android:layout_marginStart="270dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo_restaurant" />
+
+    <TextView
+        android:id="@+id/homeTopText1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="Bienvenue"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#ff9800"
+        android:textSize="70px"
+        app:layout_constraintEnd_toStartOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/homeTopText2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:layout_marginEnd="20dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="chez"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="#ff9800"
+        android:textSize="70px"
+        app:layout_constraintEnd_toStartOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@+id/homeTopText1" />
+
+    <TextView
+        android:id="@+id/homeTopText3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:fontFamily="casual"
+        android:text="DroidRestaurant"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textColor="#9E6511"
+        android:textSize="70px"
+        android:textStyle="bold|italic"
+        app:layout_constraintEnd_toStartOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@+id/homeTopText2" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="280dp"
+        android:layout_height="2dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="15dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/homeStarterSelection" />
+
+    <View
+        android:id="@+id/divider2"
+        android:layout_width="280dp"
+        android:layout_height="2dp"
+        android:layout_marginStart="65dp"
+        android:layout_marginTop="15dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/homeMainmealSelection" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
