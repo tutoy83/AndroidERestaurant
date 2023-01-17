@@ -6,7 +6,7 @@ import android.view.LayoutInflater
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class MealAdapter(var dishes: ArrayList<String>): RecyclerView.Adapter<MealAdapter.MealViewHolder>() {
+class MealAdapter(var dishes: ArrayList<String>, val onItemClickListener: (dishName: String) -> Unit): RecyclerView.Adapter<MealAdapter.MealViewHolder>() {
     class MealViewHolder(view: View):RecyclerView.ViewHolder(view){
         val cellName =  view.findViewById<TextView>(R.id.cellName)
     }
@@ -23,6 +23,9 @@ class MealAdapter(var dishes: ArrayList<String>): RecyclerView.Adapter<MealAdapt
         val dish = dishes[position]
 
         holder.cellName.text = dish
+        holder.itemView.setOnClickListener{
+            onItemClickListener(dish)
+        }
     }
 
     override fun getItemCount(): Int = dishes.size
