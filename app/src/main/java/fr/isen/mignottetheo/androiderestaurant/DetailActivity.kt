@@ -15,7 +15,7 @@ class DetailActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         //Modifier le titre en fct de la cat seletionee
-        val itemtodisplay = intent.getStringExtra("detailitemtodisplay")
+        val itemtodisplay = intent.getStringExtra("detailItemName")
         binding.detailTitleArticle.text = itemtodisplay
 
 

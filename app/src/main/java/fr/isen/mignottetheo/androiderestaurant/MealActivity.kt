@@ -42,7 +42,7 @@ class MealActivity : AppCompatActivity() {
 
         binding.categoryList.adapter = MealAdapter(value) {
             val intent = Intent(this, DetailActivity::class.java)
-            intent.putExtra("detailitemtodisplay", it)
+            intent.putExtra("detailItemName", it)
             startActivity(intent)
         }
 
