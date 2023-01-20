@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity() {
 
         val actionstarter = findViewById<Button>(R.id.homeStarterSelection)
         actionstarter.setOnClickListener{
-            intent.putExtra("categorytodisplay", "Entrees")
+            intent.putExtra("categorytodisplay", getString(R.string.starters))
             startActivity(intent)
         }
 

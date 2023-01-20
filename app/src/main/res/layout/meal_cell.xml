@@ -9,16 +9,16 @@
         android:id="@+id/cellName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="52dp"
         android:fontFamily="serif"
         android:text="TextView"
         android:textAllCaps="false"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textColor="#633D04"
-        android:textSize="25sp"
+        android:textSize="21sp"
         android:textStyle="italic"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/cellImage"
         app:layout_constraintTop_toTopOf="parent" />
 
     <View
@@ -28,6 +28,29 @@
         android:layout_marginTop="10dp"
         android:background="?android:attr/listDivider"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.609"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cellPrice" />
+
+    <ImageView
+        android:id="@+id/cellImage"
+        android:layout_width="70dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="40dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/burger" />
+
+    <TextView
+        android:id="@+id/cellPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="TextView"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/cellImage"
         app:layout_constraintTop_toBottomOf="@+id/cellName" />
 </androidx.constraintlayout.widget.ConstraintLayout>

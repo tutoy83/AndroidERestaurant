@@ -5,8 +5,9 @@ import android.view.ViewGroup
 import android.view.LayoutInflater
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import fr.isen.mignottetheo.androiderestaurant.model.Items
 
-class MealAdapter(var dishes: ArrayList<String>, val onItemClickListener: (dishName: String) -> Unit): RecyclerView.Adapter<MealAdapter.MealViewHolder>() {
+class MealAdapter(var dishes: ArrayList<Items>, val onItemClickListener: (dishName: String) -> Unit): RecyclerView.Adapter<MealAdapter.MealViewHolder>() {
     class MealViewHolder(view: View):RecyclerView.ViewHolder(view){
         val cellName =  view.findViewById<TextView>(R.id.cellName)
     }
@@ -22,11 +23,16 @@ class MealAdapter(var dishes: ArrayList<String>, val onItemClickListener: (dishN
     override fun onBindViewHolder(holder: MealViewHolder, position: Int) {
         val dish = dishes[position]
 
-        holder.cellName.text = dish
+        holder.cellName.text = dish.nameFr
         holder.itemView.setOnClickListener{
-            onItemClickListener(dish)
+            onItemClickListener(dish.nameFr!!)
         }
     }
 
     override fun getItemCount(): Int = dishes.size
+
+    fun refreshList(dishesFromAPI: ArrayList<Items>){
+        dishes = dishesFromAPI
+        notifyDataSetChanged()
+    }
 }
