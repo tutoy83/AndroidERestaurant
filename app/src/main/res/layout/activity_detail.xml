@@ -27,4 +27,84 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:srcCompat="@tools:sample/backgrounds/scenic" />
+
+    <TextView
+        android:id="@+id/totalPrice"
+        android:layout_width="260sp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:autoText="false"
+        android:background="#EC9008"
+        android:backgroundTint="#EC9008"
+        android:text="TextView"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/contentMeal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="40dp"
+        android:text="Ingredients :"
+        android:textSize="16sp"
+        android:textStyle="italic"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/detailTitleArticle" />
+
+    <TextView
+        android:id="@+id/contentMealDetails"
+        android:layout_width="377dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:text="TextView"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/contentMeal" />
+
+    <Button
+        android:id="@+id/buttonDetailMinus"
+        android:layout_width="50sp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="70dp"
+        android:text="-"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:cornerRadius="80sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/contentMealDetails" />
+
+    <Button
+        android:id="@+id/buttonDetailPlus"
+        android:layout_width="50sp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="70dp"
+        android:layout_marginEnd="60dp"
+        android:text="+"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:cornerRadius="80sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/contentMealDetails" />
+
+    <TextView
+        android:id="@+id/quantityNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="85dp"
+        android:text="1"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/buttonDetailPlus"
+        app:layout_constraintStart_toEndOf="@+id/buttonDetailMinus"
+        app:layout_constraintTop_toBottomOf="@+id/contentMealDetails" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -11,7 +11,7 @@ import android.widget.ImageView
 
 
 
-class MealAdapter(var dishes: ArrayList<Items>, val onItemClickListener: (dishName: String) -> Unit): RecyclerView.Adapter<MealAdapter.MealViewHolder>() {
+class MealAdapter(var dishes: ArrayList<Items>, val onItemClickListener: (dishName: Items?) -> Unit): RecyclerView.Adapter<MealAdapter.MealViewHolder>() {
     class MealViewHolder(view: View):RecyclerView.ViewHolder(view){
         val cellName =  view.findViewById<TextView>(R.id.cellName)
         val cellPrice =  view.findViewById<TextView>(R.id.cellPrice)
@@ -44,7 +44,7 @@ class MealAdapter(var dishes: ArrayList<Items>, val onItemClickListener: (dishNa
 
 
         holder.itemView.setOnClickListener{
-            onItemClickListener(dish.nameFr!!)
+            onItemClickListener(dish)
         }
     }
 

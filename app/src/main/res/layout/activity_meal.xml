@@ -25,7 +25,7 @@
         android:layout_marginStart="2dp"
         android:layout_marginTop="70dp"
         android:fontFamily="casual"
-        android:text="Notre sélection du moment !"
+        android:text="La sélection du moment !"
         android:textColor="#ff9800"
         android:textSize="18sp"
         android:textStyle="bold"

@@ -9,4 +9,4 @@ data class Data (
   @SerializedName("name_en" ) var nameEn : String?          = null,
   @SerializedName("items"   ) var items  : ArrayList<Items> = arrayListOf()
 
-)
+):java.io.Serializable
