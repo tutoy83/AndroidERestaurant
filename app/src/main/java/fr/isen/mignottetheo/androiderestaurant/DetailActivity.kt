@@ -2,6 +2,7 @@ package fr.isen.mignottetheo.androiderestaurant
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import com.google.android.material.snackbar.Snackbar
 import fr.isen.mignottetheo.androiderestaurant.databinding.ActivityDetailBinding
 import fr.isen.mignottetheo.androiderestaurant.model.Items
@@ -35,6 +36,7 @@ class DetailActivity : AppCompatActivity() {
             Picasso.get().load(mealSelectedPic).into(binding.detailImageArticle)
         }
 
+
         var currentQuantity = binding.quantityNumber.text.toString().toInt()
 
         //Afficher le prix a l initialisation de l activite
@@ -54,7 +56,7 @@ class DetailActivity : AppCompatActivity() {
             updateTotal(meal, currentQuantity)
         }
 
-        var totalPrice = 0
+        var totalPrice = 0F
 
         //diminuer la quantite sur click du bouton
         binding.buttonDetailMinus.setOnClickListener {
@@ -75,31 +77,33 @@ class DetailActivity : AppCompatActivity() {
         binding.contentMealDetails.text = ingredientsString
 
         binding.totalPrice.setOnClickListener {
-            // create the object that holds the meal information
+            //create the object which sum up the checkout
             val mealInfo = MealInfo(meal.nameFr.toString(), currentQuantity, totalPrice)
-            // convert the object to JSON format
+
+            // convertion to JSON
             val jsonData = Gson().toJson(mealInfo)
-            // write the JSON data to a file
+
+            // write JSON data in the  file
             val file = File(applicationContext.filesDir, "panier.json")
             FileOutputStream(file).apply {
                 write(jsonData.toByteArray())
                 close()
+                val toast = Toast.makeText(applicationContext, "Checkout saved", Toast.LENGTH_SHORT)
+                toast.show()
             }
-            // show a Snackbar or AlertDialog to inform the user that the meal has been added to the cart
-            Snackbar.make(binding.root, "Meal added to cart", Snackbar.LENGTH_SHORT).show()
 
         }
     }
 
-    private fun updateTotal(meal:Items, currentQuantity: Int): Int {
+    private fun updateTotal(meal:Items, currentQuantity: Int): Float {
         val prices = meal.prices
         val mealSelectedPrice = prices[0]
-        var priceValue = mealSelectedPrice.price.toString().toInt() * currentQuantity
+        var priceValue = (mealSelectedPrice.price.toString().toFloat() * currentQuantity).toFloat()
 
         if (prices.isNotEmpty()) {
             //securite valeur negative
             if(priceValue<0){
-                priceValue = 0
+                priceValue = 0F
             }
             binding.totalPrice.text = "Total ${priceValue} €"
 
@@ -109,6 +113,6 @@ class DetailActivity : AppCompatActivity() {
     data class MealInfo(
         val name: String,
         val quantity: Int,
-        val priceTotal: Int
+        val priceTotal: Float
         )
 }

@@ -10,7 +10,6 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="50dp"
         android:layout_marginEnd="4dp"
         android:fontFamily="serif"
         android:text="TextView"
@@ -19,9 +18,10 @@
         android:textColor="#633D04"
         android:textSize="18sp"
         android:textStyle="italic"
+        app:layout_constraintBottom_toBottomOf="@+id/cellImage"
         app:layout_constraintEnd_toStartOf="@+id/cellPrice"
         app:layout_constraintStart_toEndOf="@+id/cellImage"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/cellImage" />
 
     <View
         android:id="@+id/divider3"
@@ -48,12 +48,12 @@
         android:id="@+id/cellPrice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="47dp"
         android:layout_marginEnd="8dp"
         android:text="TextView"
         android:textColor="#EC9008"
         android:textSize="16sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/cellImage"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/cellImage" />
 </androidx.constraintlayout.widget.ConstraintLayout>

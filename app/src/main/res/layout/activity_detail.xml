@@ -6,6 +6,19 @@
     android:layout_height="match_parent"
     tools:context=".DetailActivity">
 
+    <Button
+        android:id="@+id/buttonDetailPlus"
+        android:layout_width="43sp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="70dp"
+        android:layout_marginEnd="50dp"
+        android:text="+"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:cornerRadius="80sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/contentMealDetails" />
+
     <TextView
         android:id="@+id/detailTitleArticle"
         android:layout_width="wrap_content"
@@ -30,12 +43,14 @@
 
     <TextView
         android:id="@+id/totalPrice"
-        android:layout_width="260sp"
-        android:layout_height="wrap_content"
+        android:layout_width="272dp"
+        android:layout_height="37dp"
         android:layout_marginBottom="30dp"
         android:autoText="false"
         android:background="#EC9008"
         android:backgroundTint="#EC9008"
+        android:paddingTop="5sp"
+        android:paddingBottom="5sp"
         android:text="TextView"
         android:textAlignment="center"
         android:textColor="#FFFFFF"
@@ -52,8 +67,9 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="40dp"
         android:text="Ingredients :"
+        android:textColor="#121111"
         android:textSize="16sp"
-        android:textStyle="italic"
+        android:textStyle="bold|italic"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/detailTitleArticle" />
 
@@ -64,6 +80,7 @@
         android:layout_marginStart="10dp"
         android:layout_marginTop="20dp"
         android:text="TextView"
+        android:textColor="#2E2D2D"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -71,28 +88,15 @@
 
     <Button
         android:id="@+id/buttonDetailMinus"
-        android:layout_width="50sp"
+        android:layout_width="45sp"
         android:layout_height="wrap_content"
         android:layout_marginStart="60dp"
         android:layout_marginTop="70dp"
         android:text="-"
-        android:textSize="22sp"
+        android:textSize="25sp"
         android:textStyle="bold"
         app:cornerRadius="80sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/contentMealDetails" />
-
-    <Button
-        android:id="@+id/buttonDetailPlus"
-        android:layout_width="50sp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="70dp"
-        android:layout_marginEnd="60dp"
-        android:text="+"
-        android:textSize="22sp"
-        android:textStyle="bold"
-        app:cornerRadius="80sp"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/contentMealDetails" />
 
     <TextView
@@ -101,7 +105,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="85dp"
         android:text="1"
-        android:textSize="16sp"
+        android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/buttonDetailPlus"
         app:layout_constraintStart_toEndOf="@+id/buttonDetailMinus"
