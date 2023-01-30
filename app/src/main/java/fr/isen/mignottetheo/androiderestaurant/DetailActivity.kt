@@ -77,20 +77,49 @@ class DetailActivity : AppCompatActivity() {
         binding.contentMealDetails.text = ingredientsString
 
         binding.totalPrice.setOnClickListener {
-            //create the object which sum up the checkout
-            val mealInfo = MealInfo(meal.nameFr.toString(), currentQuantity, totalPrice)
+            if(currentQuantity==0){
+                val toastError = Toast.makeText(applicationContext, "Erreur sur la quantité", Toast.LENGTH_SHORT)
+                toastError.show()
+            }else {
+                //create the object which sum up the checkout
+                val mealInfo = MealInfo(meal.nameFr.toString(), currentQuantity, totalPrice)
 
-            // convertion to JSON
-            val jsonData = Gson().toJson(mealInfo)
+                // convertion to JSON
+                val jsonData = Gson().toJson(mealInfo)
 
-            // write JSON data in the  file
-            val file = File(applicationContext.filesDir, "panier.json")
-            FileOutputStream(file).apply {
-                write(jsonData.toByteArray())
-                close()
-                val toast = Toast.makeText(applicationContext, "Checkout saved", Toast.LENGTH_SHORT)
-                toast.show()
+                // write JSON data in the  file
+                val file = File(applicationContext.filesDir, "panier.json")
+                if (file.exists()) {
+                    //read content already put inside cart
+                    val existingData = file.readText()
+
+                    // APPEND
+                    val updatedData = "$existingData\n$jsonData"
+
+                    FileOutputStream(file).apply {
+                        write(updatedData.toByteArray())
+                        close()
+                        val toast = Toast.makeText(
+                            applicationContext,
+                            "Ajouté au panier",
+                            Toast.LENGTH_SHORT
+                        )
+                        toast.show()
+                    }
+                } else {
+                    FileOutputStream(file).apply {
+                        write(jsonData.toByteArray())
+                        close()
+                        val toast = Toast.makeText(
+                            applicationContext,
+                            "Ajouté au panier",
+                            Toast.LENGTH_SHORT
+                        )
+                        toast.show()
+                    }
+                }
             }
+
 
         }
     }
